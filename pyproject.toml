@@ -7,14 +7,20 @@ readme = "README.md"
 packages = [{include = "hrf_universe_home_task"}]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.11,<4.0"
 fastapi = "^0.94.0"
 psycopg2 = "^2.9.5"
 sqlalchemy = "<1.4.10"
 alembic = "^1.10.2"
 greenlet = "^3.0.3"
+argparse = "^1.4.0"
+uvicorn = "^0.34.3"
+numpy = "^2.3.0"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+calculate-days = "home_task.scripts.calculate_days_to_hire:main"
